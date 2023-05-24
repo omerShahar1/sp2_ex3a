@@ -1,85 +1,198 @@
 #include "Fraction.hpp"
-#include <iostream>
-namespace ariel
+#include <algorithm>
+#include <cmath>
+#include <limits>
+using namespace ariel;
+using namespace std;
+
+Fraction::Fraction(int numerator, int denominator)
 {
-    Fraction::Fraction(int num1, int num2)
-    {
-        this->num1 = num1;
-        this->num2 = num2;
-    }
+    this->numerator = 0;
+    this->denominator = 0;
+    
+}
 
-    Fraction& Fraction::operator++() 
-    {
-        return *this;
-    }
+Fraction::Fraction(float num)
+{
+    this->numerator = 0;
+    this->denominator = 0;
+}
 
-    Fraction Fraction::operator++(int) 
-    {
-        return Fraction(2,3);
-    }
+Fraction::Fraction()
+{
+    this->numerator = 0;
+    this->denominator = 0;
+}
 
-    Fraction& Fraction::operator--() 
-    {
-        return *this;
-    }
+int Fraction::getNumerator() const
+{
+    return 0;
+}
 
-    Fraction Fraction::operator--(int) 
-    {
-        return Fraction(2,3);
-    }
+int Fraction::getDenominator() const
+{
+    return 0;
+}
 
-    Fraction operator+(const Fraction& f1,const Fraction& f2)
-    {
-        return f1;
-    }
+void Fraction::over_flow_check(char temp, int num1, int num2, int num3) const
+{
 
-    Fraction operator-(const Fraction& f1,const Fraction& f2)
-    {
-        return f1;
-    }
+}
 
-    Fraction operator*(const Fraction& f1,const Fraction& f2)
-    {
-        return f1;
-    }
-    Fraction operator/(const Fraction& f1,const Fraction& f2)
-    {
-        return f1;
-    }
+Fraction Fraction::operator+(const Fraction &temp) const
+{
+    return temp;
+}
 
-    bool operator==(const Fraction& f1,const Fraction& f2)
-    {
-        return true;
-    }
-    bool operator!=(const Fraction& f1,const Fraction& f2)
-    {
-        return true;
-    }
-    bool operator<(const Fraction& f1,const Fraction& f2)
-    {
-        return true;
-    }
-    bool operator>(const Fraction& fraction1,const Fraction& fraction2){
-        return true;
-    }
-    bool operator<=(const Fraction& f1,const Fraction& f2)
-    {
-        return true;
-    }
-    bool operator>=(const Fraction& f1,const Fraction& f2)
-    {
-        return true;
-    }
+Fraction Fraction::operator-(const Fraction &temp) const
+{
+    return temp;
+}
 
-    std::ostream& operator<< (std::ostream& out, const Fraction& ch)
-    {
-        return out;
-    }
+Fraction Fraction::operator*(const Fraction &temp) const
+{
+    return temp;
+}
 
-    std::istream& operator>> (std::istream& in , Fraction& ch)
-    {
-        return in;
-    }
+Fraction Fraction::operator/(const Fraction &temp) const
+{
+    return temp;
+}
+
+bool Fraction::operator>(const Fraction &temp) const
+{
+    return false;
+}
+bool Fraction::operator<(const Fraction &temp) const
+{
+    return false;
+}
+
+bool Fraction::operator>=(const Fraction &temp) const
+{
+    return false;
+}
+
+bool Fraction::operator<=(const Fraction &temp) const
+{
+    return false;
+}
+
+Fraction &Fraction::operator++()
+{
+    return *this;
+}
+
+const Fraction Fraction::operator++(int flag)
+{
+    return *this;
+}
+
+Fraction &Fraction::operator--()
+{
+    return *this;
+}
+
+const Fraction Fraction::operator--(int flag)
+{
+    return *this;
+}
 
 
+
+bool ariel::operator>(float num, const Fraction &fruction)
+{
+    return false;
+}
+
+bool ariel::operator>(const Fraction &fruction, float num)
+{
+    return false;
+}
+
+bool ariel::operator<(float num, const Fraction &fruction)
+{
+    return false;
+}
+
+bool ariel::operator<(const Fraction &fruction, float num)
+{
+    return false;
+}
+
+bool ariel::operator>=(float num, const Fraction &fruction)
+{
+    return false;
+}
+
+bool ariel::operator>=(const Fraction &fruction, float num)
+{
+    return false;
+}
+
+bool ariel::operator<=(float num, const Fraction &fruction)
+{
+    return false;
+}
+
+bool ariel::operator<=(const Fraction &fruction, float num)
+{
+    return false;
+}
+
+bool ariel::operator==(const Fraction &fruc1, const Fraction &fruc2)
+{
+    return false;
+}
+
+Fraction ariel::operator+(float num, const Fraction &fruction)
+{
+    return fruction;
+}
+
+Fraction ariel::operator+(const Fraction &fruction, float num)
+{
+    return fruction;
+}
+
+Fraction ariel::operator-(float num, const Fraction &fruction)
+{
+    return fruction;
+}
+
+Fraction ariel::operator-(const Fraction &fruction, float num)
+{
+    return fruction;
+}
+
+Fraction ariel::operator*(float num, const Fraction &fruction)
+{
+    return fruction;  
+}
+
+Fraction ariel::operator*(const Fraction &fruction, float num)
+{
+    return fruction;
+}
+
+Fraction ariel::operator/(float num, const Fraction &fruction)
+{
+    return fruction;
+}
+
+Fraction ariel::operator/(const Fraction &fruction, float num)
+{
+    return fruction;
+}
+
+
+
+ostream &ariel::operator<<(ostream &out, const Fraction &frac)
+{
+    return out;
+}
+
+istream &ariel::operator>>(istream &in, Fraction &frac)
+{
+    return in;
 }
